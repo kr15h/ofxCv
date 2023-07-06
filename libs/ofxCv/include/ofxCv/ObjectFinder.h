@@ -22,6 +22,7 @@
 #include "ofxCv/Utilities.h"
 #include "ofxCv/Tracker.h"
 #include "ofRectangle.h"
+#include <string>
 
 #include "ofxCv.h"
 namespace ofxCv {
@@ -29,7 +30,7 @@ namespace ofxCv {
 	public:
 		
 		ObjectFinder();
-		void setup(string cascadeFilename);
+		void setup(std::string cascadeFilename);
 		template <class T> 
 		void update(T& img) {
 			update(toCv(img));

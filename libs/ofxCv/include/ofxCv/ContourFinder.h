@@ -30,6 +30,7 @@
 
 #include "ofxCv/Utilities.h"
 #include "ofxCv/Tracker.h"
+#include <limits>
 
 namespace ofxCv {
 	

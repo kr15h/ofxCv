@@ -2,7 +2,6 @@
 
 #include "ofxCv/Utilities.h"
 #include "ofRectangle.h"
-#include "ofVec2f.h"
 
 namespace ofxCv {
 	
@@ -26,7 +25,7 @@ namespace ofxCv {
 		return trackingDistance(toCv(a), toCv(b));
 	}
 	
-	float trackingDistance(const ofVec2f& a, const ofVec2f& b) {
+	float trackingDistance(const glm::vec2& a, const glm::vec2& b) {
 		return trackingDistance(toCv(a), toCv(b));
 	}
 	

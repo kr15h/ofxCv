@@ -48,6 +48,8 @@
 #include <utility>
 #include <map>
 #include "ofMath.h"
+#include <vector>
+#include <glm/vec2.hpp>
 
 namespace ofxCv {
 	float trackingDistance(const cv::Rect& a, const cv::Rect& b);
@@ -112,8 +114,8 @@ namespace ofxCv {
 	template <class T>
 	class Tracker {
 	protected:		
-		vector<TrackedObject<T> > previous, current;
-		vector<unsigned int> currentLabels, previousLabels, newLabels, deadLabels;
+		std::vector<TrackedObject<T> > previous, current;
+		std::vector<unsigned int> currentLabels, previousLabels, newLabels, deadLabels;
 		std::map<unsigned int, TrackedObject<T>*> previousLabelMap, currentLabelMap;
 		
 		unsigned int persistence, curLabel;
@@ -260,7 +262,7 @@ namespace ofxCv {
 	}
 	
 	template <class T>
-	const vector<unsigned int>& Tracker<T>::getDeadLabels() const {
+	const std::vector<unsigned int>& Tracker<T>::getDeadLabels() const {
 		return deadLabels;
 	}
 

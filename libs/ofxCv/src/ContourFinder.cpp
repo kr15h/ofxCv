@@ -72,7 +72,7 @@ namespace ofxCv {
 		
 		// filter the contours
 		bool needMinFilter = (minArea > 0);
-		bool needMaxFilter = maxAreaNorm ? (maxArea < 1) : (maxArea < numeric_limits<float>::infinity());
+		bool needMaxFilter = maxAreaNorm ? (maxArea < 1) : (maxArea < std::numeric_limits<float>::infinity());
 		vector<size_t> allIndices;
 		vector<double> allAreas;
         vector<bool> allHoles;
@@ -229,7 +229,7 @@ namespace ofxCv {
 		
 		static const unsigned int targetPoints = 4;
 		static const unsigned int maxIterations = 16;
-		static const double infinity = numeric_limits<double>::infinity();
+		static const double infinity = std::numeric_limits<double>::infinity();
 		double minEpsilon = 0;
 		double maxEpsilon = infinity;
 		double curEpsilon = 16; // good initial guess
@@ -316,7 +316,7 @@ namespace ofxCv {
 	}
 	
 	void ContourFinder::resetMaxArea() {
-		setMaxArea(numeric_limits<float>::infinity());
+		setMaxArea(std::numeric_limits<float>::infinity());
 	}
 	
 	void ContourFinder::setMinArea(float minArea) {
